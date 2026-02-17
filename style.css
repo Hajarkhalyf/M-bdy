@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffc0cb; /* pink background */
+  font-family: 'Pacifico', cursive;
+  overflow-x: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
+
+.typing-text {
+  font-size: 2em;
+  color: white;
+  text-shadow: 2px 2px #ff69b4;
+  line-height: 1.5em;
+}
+
+/* Animated dots for intro */
+.dots {
+  display: inline-block;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Cake */
+.cake-page .big-cake {
+  margin: 50px auto;
+  width: 150px;
+  height: 100px;
+  position: relative;
+}
+
+.cake-layer {
+  width: 150px;
+  height: 30px;
+  background: #ff69b4;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.candles {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.candle {
+  width: 8px;
+  height: 20px;
+  background: #ffeb3b;
+  border-radius: 2px;
+  position: relative;
+}
+
+.candle::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: orange;
+  border-radius: 50%;
+  animation: flicker 1s infinite;
+}
+
+@keyframes flicker {
+  0%,100% { opacity: 1; transform: translateX(-50%) scale(1); }
+  50% { opacity: 0.6; transform: translateX(-50%) scale(1.2); }
+}
+
+/* Confetti */
+.confetti-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  opacity: 0.8;
+  animation: fall 3s linear infinite;
+}
+@keyframes fall {
+  0% { transform: translateY(-10px) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+/* Mini-game cakes */
+.mini-game .mini-cakes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.mini-game .mini-cakes .cake {
+  width: 60px;
+  height: 40px;
+  background: #ff69b4;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.mini-game .mini-cakes .cake::after {
+  content: "🎂";
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Final message */
+.final-message {
+  font-size: 1.8em;
+  color: white;
+  text-shadow: 2px 2px #ff69b4;
+  line-height: 1.5em;
+  margin-top: 50px;
+}
+
+.final-message .teddy {
+  font-size: 60px;
+  margin-bottom: 20px;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
+}
